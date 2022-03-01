@@ -6,13 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="408dp"
+        android:layout_height="99dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/settings" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/ActivityTracker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity Tracker" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/GrowATree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Grow A Tree" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/ToDos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To-Do's" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/TreeCollection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tree Collection" />
+    </com.google.android.material.tabs.TabLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
