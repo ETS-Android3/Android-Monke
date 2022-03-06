@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">NO Monkeying Around!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings">Settings</string>
+    <string name="activity_tracker">Activity Tracker</string>
+    <string name="todo">To-Do\'s</string>
+    <string name="growAtree">Grow A Tree</string>
 </resources>
