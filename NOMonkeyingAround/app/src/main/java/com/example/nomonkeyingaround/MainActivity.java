@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter adapter = new viewPagerAdapter(this);
         viewpager2.setAdapter(adapter);
 
-        //enables swiping across tabs
+        //enables swiping across tabs and the tabs to sync with respective page fragment
         new TabLayoutMediator(tabLayout, viewpager2,
                 new TabLayoutMediator.TabConfigurationStrategy() {
                    @Override
@@ -34,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
                             tab.setIcon(R.drawable.settings);
                         }
                         else if (position==1){
-                            tab.setText(R.string.activity_tracker);
+                            tab.setIcon(R.drawable.leaderboard);
                         }
                         else if (position==2){
-                            tab.setText(R.string.growAtree);
+                            tab.setIcon(R.drawable.timontask);
                         }
                         else{
-                            tab.setText(R.string.todo);
+                            tab.setIcon(R.drawable.calendar);
                         }
                     }
                 }).attach();
