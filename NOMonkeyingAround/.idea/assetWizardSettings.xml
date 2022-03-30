@@ -42,6 +42,19 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                      <entry key="image">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+                                                <entry key="imagePath" value="C:\NMA! Artwork\GrowATreeIconmk2.png" />
+                                                <entry key="opacityPercent" value="60" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="text">
                                         <value>
                                           <PersistentState>
@@ -68,7 +81,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="leaderboard" />
+                                      <entry key="assetType" value="IMAGE" />
+                                      <entry key="imageAsset" value="C:\NMA! Artwork\GrowATreeIconmk2.png" />
+                                      <entry key="outputName" value="grow_a_tree_custom" />
+                                      <entry key="themeColor" value="000000" />
                                     </map>
                                   </option>
                                 </PersistentState>

@@ -3,10 +3,13 @@ package com.example.nomonkeyingaround;
 //Class created to store user account data
 public class UserAccount {
 
+    private int id;
     private String name;
     private String userName;
     private int age;
     private String passwd;
+
+
     private boolean isTeacher;
     private boolean isStudent;
 
@@ -15,7 +18,8 @@ public class UserAccount {
     }
 
     //parameterized constructor
-    public UserAccount(String name, String userName, int age, String passwd, boolean isTeacher, boolean isStudent) {
+    public UserAccount(int id, String name, String userName, int age, String passwd, boolean isTeacher, boolean isStudent) {
+        this.id = id;
         this.name = name;
         this.userName = userName;
         this.age = age;
@@ -25,6 +29,12 @@ public class UserAccount {
     }
 
     //Setter methods
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -50,6 +60,12 @@ public class UserAccount {
     }
 
     //Getter methods
+
+
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }

@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white"
+    android:id="@id/home">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
@@ -19,11 +21,14 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="412dp"
+        android:layout_height="68dp"
+        android:scrollbarSize="@dimen/cardview_compat_inset_shadow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabBackground="@color/white"
+        app:tabIndicatorColor="@color/black">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/Settings"
@@ -35,19 +40,19 @@
             android:id="@+id/ActivityTracker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/leaderboard" />
+            android:icon="@drawable/leaderboard"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/GrowATree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/timontask" />
+            android:icon="@drawable/grow_a_tree_custom" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/ToDos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/calendar" />
+            android:icon="@drawable/to_do_custom" />
 
 
     </com.google.android.material.tabs.TabLayout>
