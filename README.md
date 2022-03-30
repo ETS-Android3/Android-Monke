@@ -12,6 +12,10 @@ The following dependencies are required for Immplementation:
 1. androidx.appcompat:appcompat:1.3.0
 2. com.google.android.material:material:1.4.0
 3. androidx.constraintlayout:constraintlayout:2.0.4
+4. androidx.legacy:legacy-support-v4:1.0.0
+5. androidx.annotation:annotation:1.3.0
+6. androidx.lifecycle:lifecycle-livedata-ktx:2.4.1
+7. androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1
 
 The following dependencies are required for testImplementation:
 1. junit:junit:4.13.2
