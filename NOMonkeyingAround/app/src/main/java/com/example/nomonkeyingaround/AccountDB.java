@@ -1,5 +1,6 @@
 package com.example.nomonkeyingaround;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -37,6 +38,23 @@ public class AccountDB extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+    public boolean addOne(UserAccount userAccount){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
 
-    //need method to add data to db. refer to video you were watching starting from 48mins
+        contentValues.put(COLUMN_NAME, userAccount.getName());
+        contentValues.put(COLUMN_USERNAME, userAccount.getUserName());
+        contentValues.put(COLUMN_AGE, userAccount.getAge());
+        contentValues.put(COLUMN_PASSWORD, userAccount.getPasswd());
+        contentValues.put(COLUMN_ISSTUDENT, userAccount.isStudent());
+        contentValues.put(COLUMN_ISTEACHER, userAccount.isTeacher());
+
+        long insert = db.insert(USER_ACCOUNT_TABLE, null, contentValues);
+        if (insert == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 }

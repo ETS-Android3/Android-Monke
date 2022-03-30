@@ -39,9 +39,11 @@ public class AccountCreate extends AppCompatActivity {
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                UserAccount userAccount;
                 try {
                     //isTeacher and isStudent set to false for dev purposes
-                    UserAccount userAccount = new UserAccount(-1, name.getText().toString(), userName.getText().toString(), Integer.parseInt(age.getText().toString()), password.getText().toString(), false, false);
+                    userAccount = new UserAccount(-1, name.getText().toString(), userName.getText().toString(),
+                            Integer.parseInt(age.getText().toString()), password.getText().toString(), false, false);
                     Toast.makeText(AccountCreate.this, userAccount.toString(), Toast.LENGTH_SHORT).show();
                     startActivity(homePage);
                     setContentView(R.layout.main_activity);
@@ -49,10 +51,15 @@ public class AccountCreate extends AppCompatActivity {
 
                 catch (Exception e) {
                     Toast.makeText(AccountCreate.this, "Error Creating Customer", Toast.LENGTH_SHORT).show();
+                    userAccount = new UserAccount(-1, "error", "error", 0, "error", false, false);
                 }
 
                 //new database reference created
                 AccountDB accountDB = new AccountDB(AccountCreate.this);
+                // addOne call adds account object to db
+                boolean success = accountDB.addOne(userAccount);
+                Toast.makeText(AccountCreate.this, "Success= "+ success, Toast.LENGTH_SHORT).show();
+
             }
         });
     }
