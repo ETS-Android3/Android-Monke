@@ -26,13 +26,15 @@ public class viewPagerAdapter extends FragmentStateAdapter {
             case 2:
                 return new grow_a_tree();
 
-            default:
+            case 3:
                 return new calendar();
 
+            default:
+                return new TreeCollection();
         }
     }
     @Override
     public int getItemCount() {
-        return 4;
+        return 5;
     }
 }

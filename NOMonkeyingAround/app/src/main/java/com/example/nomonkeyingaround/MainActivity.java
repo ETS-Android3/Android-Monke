@@ -26,27 +26,33 @@ public class MainActivity extends AppCompatActivity {
 
         viewPagerAdapter adapter = new viewPagerAdapter(this);
         viewpager2.setAdapter(adapter);
+        viewpager2.setCurrentItem(2);
 
         int tabIconColor = ContextCompat.getColor(MainActivity.this, R.color.black);
+
         //enables swiping across tabs and the tabs to sync with respective page fragment
         new TabLayoutMediator(tabLayout, viewpager2,
                 new TabLayoutMediator.TabConfigurationStrategy() {
                     @Override
                     public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                         if (position==0){
-                            tab.setIcon(R.drawable.settings);
+                            tab.setIcon(R.drawable.settings_custom);
                             tab.getIcon().setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN);
                         }
                         else if (position==1){
-                            tab.setIcon(R.drawable.leaderboard);
+                            tab.setIcon(R.drawable.leaderboard_custom);
                             tab.getIcon().setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN);
                         }
                         else if (position==2){
                             tab.setIcon(R.drawable.grow_a_tree_custom);
                             tab.getIcon().setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN);
                         }
-                        else{
+                        else if (position==3){
                             tab.setIcon(R.drawable.to_do_custom);
+                            tab.getIcon().setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN);
+                        }
+                        else{
+                            tab.setIcon(R.drawable.tree_collection_custom);
                             tab.getIcon().setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN);
                         }
                     }

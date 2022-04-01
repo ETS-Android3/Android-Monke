@@ -25,4 +25,6 @@
     <string name="daily">Daily</string>
     <string name="weekly">Weekly</string>
     <string name="monthly">Monthly</string>
+    <string name="treeCollection">Tree Collection</string>
+    <string name="Login">Login</string>
 </resources>

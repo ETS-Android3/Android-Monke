@@ -48,7 +48,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\NMA! Artwork\GrowATreeIconmk2.png" />
+                                                <entry key="imagePath" value="C:\NMA! Artwork\LeaderBoardIcon.png" />
                                                 <entry key="opacityPercent" value="60" />
                                               </map>
                                             </option>
@@ -82,8 +82,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\NMA! Artwork\GrowATreeIconmk2.png" />
-                                      <entry key="outputName" value="grow_a_tree_custom" />
+                                      <entry key="imageAsset" value="C:\NMA! Artwork\LeaderBoardIcon.png" />
+                                      <entry key="outputName" value="leaderboard_custom" />
                                       <entry key="themeColor" value="000000" />
                                     </map>
                                   </option>

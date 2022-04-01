@@ -29,13 +29,13 @@ public class AccountCreate extends AppCompatActivity {
         password = findViewById(R.id.InputPassword);
         passwordReenter = findViewById(R.id.reenterPassword);
 
-        // New bundle definition for main activity being referenced after account creation
+        // New bundle initialization for main activity being referenced after account creation
         Intent homePage = new Intent(this, MainActivity.class);
         Bundle homeBundle = new Bundle();
         homeBundle.putString("key1", "CFG:-Main Activity");
         homePage.putExtras(homeBundle);
 
-        //button click listeners
+        //button click listener
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

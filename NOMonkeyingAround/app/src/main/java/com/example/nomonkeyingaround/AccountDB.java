@@ -2,10 +2,14 @@ package com.example.nomonkeyingaround;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AccountDB extends SQLiteOpenHelper {
 
@@ -26,6 +30,7 @@ public class AccountDB extends SQLiteOpenHelper {
     //called when new db is created
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        //creates USER_ACCOUNT table in
         String createTableStatement = "CREATE TABLE " + USER_ACCOUNT_TABLE + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_NAME + " TEXT, " + COLUMN_USERNAME + " TEXT, " + COLUMN_AGE + " INT, " + COLUMN_PASSWORD + " TEXT, "
                 + COLUMN_ISTEACHER + " BOOL, " + COLUMN_ISSTUDENT + " BOOL)";
@@ -38,6 +43,8 @@ public class AccountDB extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+
+    //method adds UserAccount object instance data members to the USER_ACCOUNT table in db
     public boolean addOne(UserAccount userAccount){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -56,5 +63,41 @@ public class AccountDB extends SQLiteOpenHelper {
         else {
             return true;
         }
+    }
+
+    //method queries USER_ACCOUNT_TABLE and returns list containing all UserAccount
+    //objects in the db
+    public List<UserAccount> getAll() {
+        List<UserAccount> returnList = new ArrayList<>();
+
+        //get data from database
+
+        String queryString = " SELECT * FROM " + USER_ACCOUNT_TABLE;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()) {
+            do {
+                int userID = cursor.getInt(0);
+                String name = cursor.getString(1);
+                String userName = cursor.getString(2);
+                int userAge = cursor.getInt(3);
+                String userPassword = cursor.getString(4);
+                boolean isStudent = cursor.getInt(5) == 1? true: false;
+                boolean isTeacher = cursor.getInt(6) == 1? true: false;
+
+                UserAccount userAccount = new UserAccount(userID, name, userName,
+                        userAge, userPassword, isStudent, isTeacher);
+                returnList.add(userAccount);
+            } while (cursor.moveToFirst());
+        }
+        else {
+            //failure. do not add anything to list
+        }
+        cursor.close();
+        db.close();
+        return returnList;
     }
 }

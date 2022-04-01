@@ -34,13 +34,13 @@
             android:id="@+id/Settings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/settings" />
+            android:icon="@drawable/settings_custom"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/ActivityTracker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/leaderboard"/>
+            android:icon="@drawable/leaderboard_custom"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/GrowATree"
@@ -53,6 +53,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/to_do_custom" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/TreeCollection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/tree_collection_custom" />
 
 
     </com.google.android.material.tabs.TabLayout>
