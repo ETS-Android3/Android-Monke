@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccountDB extends SQLiteOpenHelper {
+public class DatabaseController extends SQLiteOpenHelper {
 
     //Constants defined for the user account db table and db columns for easier code references
     public static final String USER_ACCOUNT_TABLE = "USER_ACCOUNT_TABLE";
@@ -23,7 +23,7 @@ public class AccountDB extends SQLiteOpenHelper {
     public static final String COLUMN_ISTEACHER = "ISTEACHER";
     public static final String COLUMN_ISSTUDENT = "ISSTUDENT";
 
-    public AccountDB(@Nullable Context context) {
+    public DatabaseController(@Nullable Context context) {
         super(context, "AccountDB", null, 1);
     }
 

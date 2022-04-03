@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link activity_tracker#newInstance} factory method to
+ * Use the {@link ActivityTracker#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class activity_tracker extends Fragment {
+public class ActivityTracker extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class activity_tracker extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public activity_tracker() {
+    public ActivityTracker() {
         // Required empty public constructor
     }
 
@@ -37,8 +37,8 @@ public class activity_tracker extends Fragment {
      * @return A new instance of fragment activity_tracker.
      */
     // TODO: Rename and change types and number of parameters
-    public static activity_tracker newInstance(String param1, String param2) {
-        activity_tracker fragment = new activity_tracker();
+    public static ActivityTracker newInstance(String param1, String param2) {
+        ActivityTracker fragment = new ActivityTracker();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

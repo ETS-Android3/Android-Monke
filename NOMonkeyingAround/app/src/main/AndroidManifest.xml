@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NOMonkeyingAround">
         <activity
-            android:name=".AccountCreate"
+            android:name=".UserAccountTableController"
 
             android:exported="true" />
         <activity

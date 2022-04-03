@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AccountCreate extends AppCompatActivity {
+public class UserAccountTableController extends AppCompatActivity {
 
     //Reference to buttons and other controls
     Button createAccount;
@@ -44,21 +44,21 @@ public class AccountCreate extends AppCompatActivity {
                     //isTeacher and isStudent set to false for dev purposes
                     userAccount = new UserAccount(-1, name.getText().toString(), userName.getText().toString(),
                             Integer.parseInt(age.getText().toString()), password.getText().toString(), false, false);
-                    Toast.makeText(AccountCreate.this, userAccount.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserAccountTableController.this, userAccount.toString(), Toast.LENGTH_SHORT).show();
                     startActivity(homePage);
                     setContentView(R.layout.main_activity);
                 }
 
                 catch (Exception e) {
-                    Toast.makeText(AccountCreate.this, "Error Creating Customer", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserAccountTableController.this, "Error Creating Customer", Toast.LENGTH_SHORT).show();
                     userAccount = new UserAccount(-1, "error", "error", 0, "error", false, false);
                 }
 
                 //new database reference created
-                AccountDB accountDB = new AccountDB(AccountCreate.this);
+                DatabaseController databaseController = new DatabaseController(UserAccountTableController.this);
                 // addOne call adds account object to db
-                boolean success = accountDB.addOne(userAccount);
-                Toast.makeText(AccountCreate.this, "Success= "+ success, Toast.LENGTH_SHORT).show();
+                boolean success = databaseController.addOne(userAccount);
+                Toast.makeText(UserAccountTableController.this, "Success= "+ success, Toast.LENGTH_SHORT).show();
 
             }
         });

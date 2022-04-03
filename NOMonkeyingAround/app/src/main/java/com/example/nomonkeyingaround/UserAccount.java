@@ -10,8 +10,8 @@ public class UserAccount {
     private String passwd;
 
 
-    private boolean isTeacher;
-    private boolean isStudent;
+    private boolean isTeacher = false;
+    private boolean isStudent = false;
 
     //default constructor
     public UserAccount() {
@@ -98,8 +98,6 @@ public class UserAccount {
                 ", userName='" + userName + '\'' +
                 ", age=" + age +
                 ", passwd='" + passwd + '\'' +
-                ", isTeacher=" + isTeacher +
-                ", isStudent=" + isStudent +
                 '}';
     }
 }

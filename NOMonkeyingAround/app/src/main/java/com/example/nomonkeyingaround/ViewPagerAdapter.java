@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class viewPagerAdapter extends FragmentStateAdapter {
+public class ViewPagerAdapter extends FragmentStateAdapter {
 
-    public viewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 
@@ -18,16 +18,16 @@ public class viewPagerAdapter extends FragmentStateAdapter {
 
         switch(position) {
             case 0:
-                return new settings();
+                return new Settings();
 
             case 1:
-                return new activity_tracker();
+                return new ActivityTracker();
 
             case 2:
-                return new grow_a_tree();
+                return new GrowATree();
 
             case 3:
-                return new calendar();
+                return new Calendar();
 
             default:
                 return new TreeCollection();

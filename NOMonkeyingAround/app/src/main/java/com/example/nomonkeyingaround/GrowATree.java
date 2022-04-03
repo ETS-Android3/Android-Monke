@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link grow_a_tree#newInstance} factory method to
+ * Use the {@link GrowATree#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class grow_a_tree extends Fragment {
+public class GrowATree extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class grow_a_tree extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public grow_a_tree() {
+    public GrowATree() {
         // Required empty public constructor
     }
 
@@ -37,8 +37,8 @@ public class grow_a_tree extends Fragment {
      * @return A new instance of fragment grow_a_tree.
      */
     // TODO: Rename and change types and number of parameters
-    public static grow_a_tree newInstance(String param1, String param2) {
-        grow_a_tree fragment = new grow_a_tree();
+    public static GrowATree newInstance(String param1, String param2) {
+        GrowATree fragment = new GrowATree();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

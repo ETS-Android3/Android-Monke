@@ -12,10 +12,10 @@ import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link calendar#newInstance} factory method to
+ * Use the {@link Calendar#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class calendar extends Fragment implements View.OnClickListener {
+public class Calendar extends Fragment implements View.OnClickListener {
 
     Button callMonthView;
     Button callWeekView;
@@ -30,7 +30,7 @@ public class calendar extends Fragment implements View.OnClickListener {
     private String mParam1;
     private String mParam2;
 
-    public calendar() {
+    public Calendar() {
         // Required empty public constructor
     }
 
@@ -43,8 +43,8 @@ public class calendar extends Fragment implements View.OnClickListener {
      * @return A new instance of fragment to_do.
      */
     // TODO: Rename and change types and number of parameters
-    public static calendar newInstance(String param1, String param2) {
-        calendar fragment = new calendar();
+    public static Calendar newInstance(String param1, String param2) {
+        Calendar fragment = new Calendar();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
