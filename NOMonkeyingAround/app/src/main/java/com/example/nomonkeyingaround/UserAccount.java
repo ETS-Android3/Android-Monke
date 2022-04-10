@@ -10,15 +10,17 @@ public class UserAccount {
     private String passwd;
 
 
-    private boolean isTeacher = false;
-    private boolean isStudent = false;
+    private boolean isTeacher;
+    private boolean isStudent;
+    private boolean isPhysician;
 
     //default constructor
     public UserAccount() {
     }
 
     //parameterized constructor
-    public UserAccount(int id, String name, String userName, int age, String passwd, boolean isTeacher, boolean isStudent) {
+    public UserAccount(int id, String name, String userName, int age, String passwd, boolean isTeacher, boolean isStudent,
+                       boolean isPhysician) {
         this.id = id;
         this.name = name;
         this.userName = userName;
@@ -26,6 +28,7 @@ public class UserAccount {
         this.passwd = passwd;
         this.isTeacher = isTeacher;
         this.isStudent = isStudent;
+        this.isPhysician = isPhysician;
     }
 
     //Setter methods
@@ -52,11 +55,15 @@ public class UserAccount {
     }
 
     public void setTeacher(boolean teacher) {
-        isTeacher = teacher;
+        this.isTeacher = teacher;
     }
 
     public void setStudent(boolean student) {
-        isStudent = student;
+        this.isStudent = student;
+    }
+
+    public void setPhysician(boolean physician) {
+        this.isPhysician = physician;
     }
 
     //Getter methods
@@ -88,6 +95,10 @@ public class UserAccount {
 
     public boolean isStudent() {
         return isStudent;
+    }
+
+    public boolean isPhysician() {
+        return isPhysician;
     }
 
     //overridden toString method

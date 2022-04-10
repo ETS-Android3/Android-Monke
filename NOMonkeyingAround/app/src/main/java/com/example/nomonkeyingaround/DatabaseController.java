@@ -22,6 +22,7 @@ public class DatabaseController extends SQLiteOpenHelper {
     public static final String COLUMN_PASSWORD = "PASSWORD";
     public static final String COLUMN_ISTEACHER = "ISTEACHER";
     public static final String COLUMN_ISSTUDENT = "ISSTUDENT";
+    public static final String COLUMN_ISPHYSICIAN = "ISPHYSICIAN";
 
     public DatabaseController(@Nullable Context context) {
         super(context, "AccountDB", null, 1);
@@ -33,7 +34,7 @@ public class DatabaseController extends SQLiteOpenHelper {
         //creates USER_ACCOUNT table in
         String createTableStatement = "CREATE TABLE " + USER_ACCOUNT_TABLE + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_NAME + " TEXT, " + COLUMN_USERNAME + " TEXT, " + COLUMN_AGE + " INT, " + COLUMN_PASSWORD + " TEXT, "
-                + COLUMN_ISTEACHER + " BOOL, " + COLUMN_ISSTUDENT + " BOOL)";
+                + COLUMN_ISTEACHER + " BOOL, " + COLUMN_ISSTUDENT + " BOOL, " + COLUMN_ISPHYSICIAN + " BOOL) ";
 
         sqLiteDatabase.execSQL(createTableStatement);
     }
@@ -55,6 +56,7 @@ public class DatabaseController extends SQLiteOpenHelper {
         contentValues.put(COLUMN_PASSWORD, userAccount.getPasswd());
         contentValues.put(COLUMN_ISSTUDENT, userAccount.isStudent());
         contentValues.put(COLUMN_ISTEACHER, userAccount.isTeacher());
+        contentValues.put(COLUMN_ISPHYSICIAN, userAccount.isPhysician());
 
         long insert = db.insert(USER_ACCOUNT_TABLE, null, contentValues);
         if (insert == -1) {
@@ -87,9 +89,10 @@ public class DatabaseController extends SQLiteOpenHelper {
                 String userPassword = cursor.getString(4);
                 boolean isStudent = cursor.getInt(5) == 1? true: false;
                 boolean isTeacher = cursor.getInt(6) == 1? true: false;
+                boolean isPhysician = cursor.getInt(7) == 1? true: false;
 
                 UserAccount userAccount = new UserAccount(userID, name, userName,
-                        userAge, userPassword, isStudent, isTeacher);
+                        userAge, userPassword, isTeacher, isStudent, isPhysician);
                 returnList.add(userAccount);
             } while (cursor.moveToFirst());
         }
