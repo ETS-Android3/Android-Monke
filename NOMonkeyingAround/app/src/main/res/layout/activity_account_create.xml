@@ -110,6 +110,7 @@
         app:layout_constraintTop_toBottomOf="@+id/isStudent" />
 
     <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Choice"
         android:id="@+id/isTeacher"
         android:layout_width="82dp"
         android:layout_height="48dp"
@@ -120,6 +121,7 @@
         app:layout_constraintTop_toBottomOf="@+id/reenterPassword" />
 
     <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Choice"
         android:id="@+id/isStudent"
         android:layout_width="82dp"
         android:layout_height="48dp"
@@ -129,6 +131,7 @@
         app:layout_constraintTop_toBottomOf="@+id/reenterPassword" />
 
     <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Choice"
         android:id="@+id/isPhysician"
         android:layout_width="92dp"
         android:layout_height="48dp"
