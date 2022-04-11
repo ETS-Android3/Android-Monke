@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".UserAccountTableController">
+    tools:context=".CreateAccount">
 
     <TextView
         android:id="@+id/textView"
@@ -45,6 +45,21 @@
         android:fontFamily="casual"
         android:hint="@string/UserName"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="#808080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InputEmail" />
+
+    <EditText
+        android:id="@+id/InputEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:backgroundTint="#808080"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress"
         android:textColor="@color/black"
         android:textColorHint="#808080"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,8 +125,8 @@
         app:layout_constraintTop_toBottomOf="@+id/isStudent" />
 
     <com.google.android.material.chip.Chip
-        style="@style/Widget.MaterialComponents.Chip.Choice"
         android:id="@+id/isTeacher"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
         android:layout_width="82dp"
         android:layout_height="48dp"
         android:hint="@string/teacher"
@@ -121,8 +136,8 @@
         app:layout_constraintTop_toBottomOf="@+id/reenterPassword" />
 
     <com.google.android.material.chip.Chip
-        style="@style/Widget.MaterialComponents.Chip.Choice"
         android:id="@+id/isStudent"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
         android:layout_width="82dp"
         android:layout_height="48dp"
         android:layout_marginEnd="4dp"
@@ -131,8 +146,8 @@
         app:layout_constraintTop_toBottomOf="@+id/reenterPassword" />
 
     <com.google.android.material.chip.Chip
-        style="@style/Widget.MaterialComponents.Chip.Choice"
         android:id="@+id/isPhysician"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
         android:layout_width="92dp"
         android:layout_height="48dp"
         android:layout_marginEnd="68dp"

@@ -13,7 +13,7 @@
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".UserAccountTableController"
+            android:name=".CreateAccount"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

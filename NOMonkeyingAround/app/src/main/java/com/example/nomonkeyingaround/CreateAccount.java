@@ -10,18 +10,26 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class UserAccountTableController extends AppCompatActivity {
+public class CreateAccount extends AppCompatActivity implements FirebaseController{
 
     //Reference to buttons and other controls
     Button createAccount;
-    EditText name, userName, age, password, passwordReenter;
+    EditText name, userName, age, password, passwordReenter, email;
     Chip isStudent, isTeacher, isPhysician;
+
+    //constant firebase db reference initialized
+    private final DatabaseReference USERDB = FirebaseDatabase.getInstance().getReference();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_create);
+
+        //Initialization of firebase reference
 
 
         //Control assignment
@@ -29,6 +37,7 @@ public class UserAccountTableController extends AppCompatActivity {
         name = findViewById(R.id.InputName);
         userName = findViewById(R.id.InputUsername);
         age = findViewById(R.id.InputAge);
+        email = findViewById(R.id.InputEmail);
         password = findViewById(R.id.InputPassword);
         passwordReenter = findViewById(R.id.reenterPassword);
         isStudent = findViewById(R.id.isStudent);
@@ -71,54 +80,52 @@ public class UserAccountTableController extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 UserAccount userAccount;
-
                 //if checks if entered passwords are the same
                 if (password.getText().toString().equals(passwordReenter.getText().toString())) {
                     try {
                         // If else block initializes userAccount variable with either different account based on choice selected
                         if (isStudent.isChecked()) {
-                            userAccount = new StudentAccount(-1, name.getText().toString(), userName.getText().toString(),
-                                    Integer.parseInt(age.getText().toString()), password.getText().toString(), false, true,
-                                    false);
+                            userAccount = new StudentAccount(name.getText().toString(), userName.getText().toString(),
+                                    Integer.parseInt(age.getText().toString()),email.getText().toString(), password.getText().toString(),
+                                    false, true, false);
                         }
                         else if (isTeacher.isChecked()) {
-                            userAccount = new TeacherAccount(-1, name.getText().toString(), userName.getText().toString(),
-                                    Integer.parseInt(age.getText().toString()), password.getText().toString(), true, false,
-                                    false);
+                            userAccount = new TeacherAccount(name.getText().toString(), userName.getText().toString(),
+                                    Integer.parseInt(age.getText().toString()),email.getText().toString(), password.getText().toString(),
+                                    true, false, false);
                         }
                         else if (isPhysician.isChecked()) {
-                            userAccount = new PhysicianAccount(-1, name.getText().toString(), userName.getText().toString(),
-                                    Integer.parseInt(age.getText().toString()), password.getText().toString(), false, false,
-                                    true);
+                            userAccount = new PhysicianAccount(name.getText().toString(), userName.getText().toString(),
+                                    Integer.parseInt(age.getText().toString()), email.getText().toString(), password.getText().toString(),
+                                    false, false, true);
                         }
                         else {
-                            userAccount = new UserAccount(-1, name.getText().toString(), userName.getText().toString(),
-                                    Integer.parseInt(age.getText().toString()), password.getText().toString(), false, false,
-                                    false);
+                            userAccount = new UserAccount(name.getText().toString(), userName.getText().toString(),
+                                    Integer.parseInt(age.getText().toString()), email.getText().toString(), password.getText().toString(), false,
+                                    false, false);
                         }
-                        Toast.makeText(UserAccountTableController.this, userAccount.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CreateAccount.this, userAccount.toString(), Toast.LENGTH_SHORT).show();
                         startActivity(homePage);
                         setContentView(R.layout.main_activity);
                     }
 
                     catch (Exception e) {
-                        Toast.makeText(UserAccountTableController.this, "Error Creating Customer", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CreateAccount.this, "Error Creating Customer", Toast.LENGTH_SHORT).show();
                         // initializes userAccount with an error object if exception is hit
+                        userAccount = new UserAccount("error", "error", 0, "error", "error", false, false,
+                                false);
+
                     }
                 }
                 else {
-                    Toast.makeText(UserAccountTableController.this, "Passwords Do Not Match", Toast.LENGTH_SHORT).show();
-                }
+                    Toast.makeText(CreateAccount.this, "Passwords Do Not Match", Toast.LENGTH_SHORT).show();
+                    userAccount = new UserAccount("error", "error", 0, "error", "error", false, false,
+                            false);
 
-                userAccount = new UserAccount(-1, "error", "error", 0, "error", false, false,
-                        false);
-                //new database reference created
-                DatabaseController databaseController = new DatabaseController(UserAccountTableController.this);
-                // addOne call adds account object to db
-                // addOne only called if userAccount isn't error object
+                }
+                // only adds account to db if its a valid user
                 if (!userAccount.getName().equals("error")) {
-                    boolean success = databaseController.addOne(userAccount);
-                    Toast.makeText(UserAccountTableController.this, "Success= " + success, Toast.LENGTH_SHORT).show();
+                    addUser(USERDB, userAccount);
                 }
             }
         });

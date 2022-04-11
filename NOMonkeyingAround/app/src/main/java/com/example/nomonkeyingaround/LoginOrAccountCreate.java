@@ -20,7 +20,7 @@ public class LoginOrAccountCreate extends AppCompatActivity {
         //control assignment
         accountCreate = findViewById(R.id.CreateAccount);
 
-        Intent accountCreation = new Intent(this, UserAccountTableController.class);
+        Intent accountCreation = new Intent(this, CreateAccount.class);
         Bundle accountCreationBundle = new Bundle();
         accountCreationBundle.putString("key2", "CFG:-Create Account");
         accountCreation.putExtras(accountCreationBundle);

@@ -3,7 +3,8 @@ package com.example.nomonkeyingaround;
 //Class created to store user account data
 public class UserAccount {
 
-    private int id;
+//    private int id;
+    private String email;
     private String name;
     private String userName;
     private int age;
@@ -19,9 +20,10 @@ public class UserAccount {
     }
 
     //parameterized constructor
-    public UserAccount(int id, String name, String userName, int age, String passwd, boolean isTeacher, boolean isStudent,
+    public UserAccount(String name, String userName, int age, String email, String passwd, boolean isTeacher, boolean isStudent,
                        boolean isPhysician) {
-        this.id = id;
+//        this.id = id;
+        this.email = email;
         this.name = name;
         this.userName = userName;
         this.age = age;
@@ -34,9 +36,10 @@ public class UserAccount {
     //Setter methods
 
 
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+    public void setEmail(String email) {this.email = email;}
 
     public void setName(String name) {
         this.name = name;
@@ -69,8 +72,13 @@ public class UserAccount {
     //Getter methods
 
 
-    public int getId() {
-        return id;
+//    public int getId() {
+//        return id;
+//    }
+
+
+    public String getEmail() {
+        return email;
     }
 
     public String getName() {
