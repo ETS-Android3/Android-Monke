@@ -1,5 +1,6 @@
 package com.example.nomonkeyingaround;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +20,16 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class GrowATree extends Fragment {
+
+    public TextView timerText;
+    public Button startButton;
+    public Button resetButton;
+
+    Timer timer;
+    TimerTask timerTask;
+    double time = 0.0;
+
+    boolean timerStarted = false;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +75,83 @@ public class GrowATree extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_grow_a_tree, container, false);
+        View mView = inflater.inflate(R.layout.fragment_grow_a_tree, container, false);
+
+        timerText = (TextView) mView.findViewById(R.id.timerText);
+        startButton = (Button) mView.findViewById(R.id.startButton);
+        resetButton = (Button) mView.findViewById(R.id.resetButton);
+
+        timer = new Timer();
+
+
+        startButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View mView) {
+                if (!timerStarted) {
+                    timerStarted = true;
+                    setButtonUI("STOP");
+                    startTimer();
+                } else {
+                    timerStarted = false;
+                    setButtonUI("START");
+
+                    timerTask.cancel();
+                }
+            }
+        });
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View mView) {
+
+                if (timerTask != null) {
+                    timerTask.cancel();
+                    setButtonUI("START");
+                    time = 0;
+                    timerStarted = false;
+                    timerText.setText(formatTime(0, 0, 0));
+                }
+            }
+        });
+
+        return mView;
+    }
+    private void setButtonUI(String text) {
+        startButton.setText(text);
+    }
+
+    private void startTimer()
+    {
+        timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        time++;
+                        timerText.setText(getTimerText());
+                    }
+                });
+
+            }
+        };
+        timer.scheduleAtFixedRate(timerTask, 0, 1000);
+    }
+
+    private String getTimerText()
+    {
+
+        int rounded = (int) Math.round(time);
+
+        int seconds = ((rounded % 86400) % 3600) % 60;
+        int minutes = ((rounded % 86400) % 3600) / 60;
+        int hours = ((rounded % 86400) / 3600);
+
+
+        return formatTime(seconds, minutes, hours);
+    }
+
+    private  String formatTime(int seconds, int minutes, int hours)
+    {
+        return String.format("%02d",hours) + ":"
+                + String.format("%02d",minutes) + ":"
+                + String.format("%02d",seconds);
     }
 }
