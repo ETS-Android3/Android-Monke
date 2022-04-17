@@ -8,18 +8,18 @@ NO Monekeying Around! is a mobile application developed for the android OS platf
 
 Dependencies: 
 
-The following dependencies are required for Immplementation: 
-1. androidx.appcompat:appcompat:1.3.0
-2. com.google.android.material:material:1.4.0
-3. androidx.constraintlayout:constraintlayout:2.0.4
-4. androidx.legacy:legacy-support-v4:1.0.0
-5. androidx.annotation:annotation:1.3.0
-6. androidx.lifecycle:lifecycle-livedata-ktx:2.4.1
-7. androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1
-
-The following dependencies are required for testImplementation:
-1. junit:junit:4.13.2
-
-The following dependencies are required for androidTestImplementation:
-1. androidx.test.ext:junit:1.1.3
-2. androidx.test.espresso:espresso-core:3.4.0
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.annotation:annotation:1.3.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'com.google.firebase:firebase-database:20.0.4'
+    implementation platform('com.google.firebase:firebase-bom:29.3.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    
