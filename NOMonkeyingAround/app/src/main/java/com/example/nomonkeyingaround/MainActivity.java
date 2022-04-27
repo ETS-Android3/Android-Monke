@@ -2,16 +2,25 @@ package com.example.nomonkeyingaround;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
+
+    TabLayout tabLayout;
+    ViewPager2 viewpager2;
+    ViewPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_activity);
 
         // get elements
-        TabLayout tabLayout = findViewById(R.id.tabs);
-        ViewPager2 viewpager2 = findViewById(R.id.view_pager);
+        tabLayout = findViewById(R.id.tabs);
+        viewpager2 = findViewById(R.id.view_pager);
 
-        ViewPagerAdapter adapter = new ViewPagerAdapter(this);
+        adapter = new ViewPagerAdapter(this);
         viewpager2.setAdapter(adapter);
         viewpager2.setCurrentItem(2);
 

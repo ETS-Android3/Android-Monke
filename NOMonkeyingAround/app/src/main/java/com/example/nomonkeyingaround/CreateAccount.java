@@ -95,7 +95,7 @@ public class CreateAccount extends AppCompatActivity implements FirebaseControll
                                     true, false, false);
                         }
                         else if (isPhysician.isChecked()) {
-                            userAccount = new PhysicianAccount(name.getText().toString(), userName.getText().toString(),
+                            userAccount = new ClinicalAccount(name.getText().toString(), userName.getText().toString(),
                                     Integer.parseInt(age.getText().toString()), email.getText().toString(), password.getText().toString(),
                                     false, false, true);
                         }

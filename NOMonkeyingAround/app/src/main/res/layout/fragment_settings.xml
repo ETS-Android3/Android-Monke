@@ -12,8 +12,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="@color/black"
-        android:text="@string/settings" />
+        android:text="@string/settings"
+        android:textColor="@color/black" />
 
 
 </RelativeLayout>
