@@ -1,5 +1,7 @@
 package com.example.nomonkeyingaround;
 
+import android.util.Log;
+
 //Class created to store user account data
 public class UserAccount {
 
@@ -8,7 +10,7 @@ public class UserAccount {
     private String name;
     private String userName;
     private int age;
-    private String passwd;
+    public String passwd;
 
 
     private boolean isTeacher;
