@@ -1,6 +1,7 @@
 package com.example.nomonkeyingaround;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.firebase.FirebaseAppLifecycleListener;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -30,6 +33,7 @@ public class GrowATree extends Fragment {
     double time = 0.0;
 
     boolean timerStarted = false;
+    boolean isInBackground;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,7 +73,9 @@ public class GrowATree extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -148,10 +154,10 @@ public class GrowATree extends Fragment {
         return formatTime(seconds, minutes, hours);
     }
 
-    private  String formatTime(int seconds, int minutes, int hours)
-    {
-        return String.format("%02d",hours) + ":"
-                + String.format("%02d",minutes) + ":"
-                + String.format("%02d",seconds);
+    private  String formatTime(int seconds, int minutes, int hours) {
+        return String.format("%02d", hours) + ":"
+                + String.format("%02d", minutes) + ":"
+                + String.format("%02d", seconds);
     }
+
 }
