@@ -175,6 +175,4 @@ public class UserAccountTest {
     public boolean correctParameterTypes(UserAccount ua){
         return false;
     }
-
-
 }
