@@ -2,8 +2,13 @@ package com.example.nomonkeyingaround;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -73,6 +78,11 @@ public class GrowATree extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("Tree Death Notification", "Tree Death Notification", NotificationManager.IMPORTANCE_HIGH);
+            NotificationManager manager = getActivity().getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
 
     }
 
@@ -88,7 +98,22 @@ public class GrowATree extends Fragment {
         resetButton = (Button) mView.findViewById(R.id.resetButton);
 
         timer = new Timer();
+        Button killTree;
 
+        killTree = mView.findViewById(R.id.killTree);
+        killTree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(view.getContext(), "Tree Death Notification");
+                builder.setContentText("Your Tree has Died");
+                builder.setContentText("Your Tree has died, Cheeks is very disappointed!");
+                builder.setSmallIcon(R.drawable.homepagetree_color);
+                builder.setAutoCancel(true);
+
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(view.getContext());
+                managerCompat.notify(1, builder.build());
+            }
+        });
 
         startButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View mView) {

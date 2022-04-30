@@ -2,9 +2,14 @@ package com.example.nomonkeyingaround;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 
 public class UserAccountTest {
-    @Test
+
+    public UserAccountTest() {
+    }
+
+    @ParameterizedTest
     public boolean passwdIsLongEnough(UserAccount ua){
         String x = ua.getPasswd();
         if (x.length() < 8){
@@ -170,6 +175,49 @@ public class UserAccountTest {
             }
         }
         return true;
+    }
+
+    @Test
+    public boolean studentAccountTest(StudentAccount studentAccount){
+        if (studentAccount.isStudent() == true) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    @Test
+    public boolean teacherAccountTest(TeacherAccount teacherAccount){
+        if (teacherAccount.isTeacher() == true){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    @Test
+    public boolean clinicalAccountTest(ClinicalAccount clinicalAccount) {
+        if (clinicalAccount.isPhysician() == true){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    @Test
+    public boolean paramTypeTest(UserAccount userAccount) {
+        if ((userAccount.getName() instanceof String)
+                && (userAccount.getUserName() instanceof String)
+                && (userAccount.getPasswd() instanceof  String)
+                && (userAccount.getEmail() instanceof String)){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Test
