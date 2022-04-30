@@ -18,8 +18,9 @@ Dependencies:
     implementation 'com.google.firebase:firebase-database:20.0.4'
     implementation platform('com.google.firebase:firebase-bom:29.3.0')
     implementation 'com.google.firebase:firebase-auth'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.0-M1'
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.0.1"
     testImplementation 'junit:junit:4.13.2'
+    testCompileOnly 'org.apiguardian:apiguardian-api:1.0.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    
