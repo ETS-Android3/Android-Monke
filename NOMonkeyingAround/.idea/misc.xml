@@ -8,16 +8,20 @@
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/activity_account_create.xml" value="0.30434782608695654" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/activity_create_account.xml" value="0.36277173913043476" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/activity_home_page.xml" value="0.30434782608695654" />
+        <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/activity_login_or_account_create.xml" value="0.25" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/fragment_activity_tracker.xml" value="0.3645833333333333" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/fragment_calendar.xml" value="0.30434782608695654" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/fragment_calendar_month_view.xml" value="0.30434782608695654" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/fragment_grow_a_tree.xml" value="0.296195652173913" />
+        <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/fragment_settings.xml" value="0.25679347826086957" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/fragment_to_do.xml" value="0.296195652173913" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/fragment_tree_collection.xml" value="0.3125" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/grow_a_tree_main_panel.xml" value="0.25" />
+        <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/item_todo.xml" value="0.25679347826086957" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/main_activity.xml" value="0.3125" />
         <entry key="..\:/Users/Declan/AndroidStudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/memememe.xml" value="0.29528985507246375" />
+        <entry key="..\:/Users/b3cai/StudioProjects/Android-Monke/NOMonkeyingAround/app/src/main/res/layout/fragment_grow_a_tree.xml" value="0.176" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_calendar_month_view.xml" value="0.15833333333333333" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.15833333333333333" />

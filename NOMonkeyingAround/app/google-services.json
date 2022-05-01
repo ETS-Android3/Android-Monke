@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "611213406179",
+    "project_id": "nma--database",
+    "storage_bucket": "nma--database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611213406179:android:580ae0d927d9e5e2783ad6",
+        "android_client_info": {
+          "package_name": "com.example.nomonkeyingaround"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611213406179-bboi3pkti1afgshi0vhaqfljraotmjhm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8p0Q17fen-ZIWHd5-BrR9nYPJKdNXiNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611213406179-bboi3pkti1afgshi0vhaqfljraotmjhm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

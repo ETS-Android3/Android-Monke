@@ -27,4 +27,7 @@
     <string name="monthly">Monthly</string>
     <string name="treeCollection">Tree Collection</string>
     <string name="Login">Login</string>
+    <string name="teacher">Teacher</string>
+    <string name="student">Student</string>
+    <string name="physician">Physician</string>
 </resources>

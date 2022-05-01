@@ -1,39 +1,47 @@
 package com.example.nomonkeyingaround;
 
+import android.util.Log;
+
 //Class created to store user account data
 public class UserAccount {
 
-    private int id;
+//    private int id;
+    private String email;
     private String name;
     private String userName;
     private int age;
-    private String passwd;
+    public String passwd;
 
 
-    private boolean isTeacher = false;
-    private boolean isStudent = false;
+    private boolean isTeacher;
+    private boolean isStudent;
+    private boolean isPhysician;
 
     //default constructor
     public UserAccount() {
     }
 
     //parameterized constructor
-    public UserAccount(int id, String name, String userName, int age, String passwd, boolean isTeacher, boolean isStudent) {
-        this.id = id;
+    public UserAccount(String name, String userName, int age, String email, String passwd, boolean isTeacher, boolean isStudent,
+                       boolean isPhysician) {
+//        this.id = id;
+        this.email = email;
         this.name = name;
         this.userName = userName;
         this.age = age;
         this.passwd = passwd;
         this.isTeacher = isTeacher;
         this.isStudent = isStudent;
+        this.isPhysician = isPhysician;
     }
 
     //Setter methods
 
 
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+    public void setEmail(String email) {this.email = email;}
 
     public void setName(String name) {
         this.name = name;
@@ -52,18 +60,27 @@ public class UserAccount {
     }
 
     public void setTeacher(boolean teacher) {
-        isTeacher = teacher;
+        this.isTeacher = teacher;
     }
 
     public void setStudent(boolean student) {
-        isStudent = student;
+        this.isStudent = student;
+    }
+
+    public void setPhysician(boolean physician) {
+        this.isPhysician = physician;
     }
 
     //Getter methods
 
 
-    public int getId() {
-        return id;
+//    public int getId() {
+//        return id;
+//    }
+
+
+    public String getEmail() {
+        return email;
     }
 
     public String getName() {
@@ -88,6 +105,10 @@ public class UserAccount {
 
     public boolean isStudent() {
         return isStudent;
+    }
+
+    public boolean isPhysician() {
+        return isPhysician;
     }
 
     //overridden toString method
